@@ -3,7 +3,6 @@ sidebar_position: 7
 ---
 
 # 底层开发
-
 主要介绍radxa-aicore-bm1684x OS镜像的编译、烧录
 
 ## 系统编译

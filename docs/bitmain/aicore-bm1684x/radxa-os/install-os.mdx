@@ -20,7 +20,10 @@ title: 系统安装
 ### 1.格式化SD卡
 
 请将 SD 卡格式化为 FAT32 格式（如果 SD 卡上有多个分区，只能使用第一个分区），大小
-为 1GB 以上。下面介绍使用linux命令fdisk格式化SD卡，如果SD卡原本就有分区请先将分区进行删除.
+为 1GB 以上。下面介绍使用linux命令fdisk和windows下使用工具格式化SD卡，如果SD卡原本就有分区请先将分区进行删除.
+
+### linux
+
 
 ```
 $ sudo fdisk /dev/sda
@@ -59,11 +62,19 @@ Syncing disks.
 ```
 
 使用mkfs.vfat命令将分区格式化为fat32格式
-
 ```
 $ sudo mkfs.vfat /dev/sda1
 mkfs.fat 4.2 (2021-01-31)
 ```
+
+### windows
+
+使用工具rufus，[安装链接](https://rufus.ie/)
+
+按照下图步骤格式化sd卡
+
+<img src="/img/aicore-bm1684x/rufus-use.webp" alt="radxa-aicore-bm1684x interfaces" />
+
 
 ### 2.请将下载的压缩包解压到 SD 卡根目录
 
@@ -71,9 +82,8 @@ mkfs.fat 4.2 (2021-01-31)
 
 请将 BM1684X 断电，插入 SD 卡，并连接串口终端，然后给 BM1684X 上电。您将看到
 BM1684X 自动进入刷机流程：
-
 ```
-Hit any key to stop autoboot:  0
+Hit any key to stop autoboot:  0 
 switch to partitions #0, OK
 mmc1 is current device
 Scanning mmc 1:1...
@@ -100,7 +110,6 @@ update eMMC
 
 刷机通常耗时约 3 分钟，结束后，会看到拔掉 SD 卡并重启 BM1684X 的提示，请依照操作
 即可：
-
 ```
 eMMC update done
 bm savelog 449 bytes written in 10 ms (43 KiB/s)
