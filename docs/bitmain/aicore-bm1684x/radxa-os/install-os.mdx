@@ -10,6 +10,7 @@ title: 系统安装
 - 1x microSD 卡(容量 >=8GB)
 - 1x microSD 读卡器
 - 20V 电源适配器（在整机下安装系统镜像，整机供电20V）
+- usb type-a转type-c数据线一条（日志输出）
 
 ## 镜像下载
 
@@ -76,11 +77,15 @@ mkfs.fat 4.2 (2021-01-31)
 <img src="/img/aicore-bm1684x/rufus-use.webp" alt="radxa-aicore-bm1684x interfaces" />
 
 
-### 2.请将下载的压缩包解压到 SD 卡根目录
+### 2.将下载的压缩包解压，并将里面的所有文件拷贝到 SD 卡根目录
+
+确认文件如下
+
+<img src="/img/aicore-bm1684x/img.webp" alt="radxa-aicore-bm1684x interfaces" />
 
 ### 3.SD卡刷机
 
-请将 BM1684X 断电，插入 SD 卡，并连接串口终端，然后给 BM1684X 上电。您将看到
+请将 Fogwise BM168M 断电，插入 SD 卡，并连接串口终端（使用usb type-a转type-c数据线，type-c接 Fogwise BM168M 的debug口，type a连接电脑，波特率设置成115200，debug口位置在[Fogwise BM168M硬件信息下的硬件接口说明](../../bm168m/hardware-design/hardware-interface.md)寻找），然后给整机上电。您将看到
 BM1684X 自动进入刷机流程：
 ```
 Hit any key to stop autoboot:  0 
@@ -127,7 +132,7 @@ LED 'status' not found (err=-19)
 
 ## 系统启动
 
-- 按照上述步骤成功烧录镜像到emmc后，将 microSD 卡拔出，然后给 BM1684X 上电。
+- 按照上述步骤成功烧录镜像到emmc后，将 microSD 卡拔出，然后给 Fogwise BM168M 上电。
 
 ## 常见问题
 
